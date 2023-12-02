@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Removal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Image Background Removal</h1>
+
+
+
+
+  <div class="container">
+    <div class="image-container" id="originalImageContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>Original Image</h2>
+        <img id="originalImage" alt="Original Image" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    
+
+    <div class="image-container" id="processedImageContainer">
+      <h2>Processed Image</h2>
+      <img id="resultImage" alt="Processed Image">
+      <br>
+     
+    </div>
+  </div>
+  
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" id="imageInput" accept="image/*" required onchange="displayOriginalImage(event)">
+    <button type="button" onclick="removeBackground()">Remove Background</button>
+    <a id="downloadLink" download="processed_image.png" href="#">Download</a>
+  </form>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
